@@ -1,0 +1,52 @@
+---
+const badges = ["SDG-Aligned", "IDG-Aligned", "IRB-Backed", "US-Accredited"];
+---
+
+<footer class="relative px-6 py-10 md:px-12 lg:px-20">
+  <!-- Gradient top border -->
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--teal)]/40 to-transparent"></div>
+
+  <div class="mx-auto max-w-7xl">
+    <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+      <!-- Quote -->
+      <blockquote class="max-w-lg" data-animate="fade-left">
+        <p class="font-serif text-2xl italic leading-relaxed text-theme-secondary md:text-3xl">
+          &ldquo;Geography no longer determines
+          <span class="bg-gradient-to-r from-[var(--teal)] to-[var(--teal-hover)] bg-clip-text text-transparent">who gets to shape global solutions</span>.&rdquo;
+        </p>
+      </blockquote>
+
+      <!-- Logo and link -->
+      <div class="flex flex-col items-end gap-3" data-animate="fade-right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 230 224"
+          fill="currentColor"
+          class="h-12 w-12 text-theme-primary"
+          aria-label="MENTEE logo"
+        >
+          <path d="M0.7 222.3c-0.3-0.5-0.2-4.5 0.1-9l0.5-8.3h35.4 35.4v-6-6H37c-19 0-34.5-0.1-34.5-0.3s1.3-3.9 2.9-8.3l2.9-7.9 31.3-0.5 31.4-0.5 0.3-5.7 0.3-5.8H37.4 4.2l0-47V79.5h32.5 32.5v-12.5-12.5H38.2 7.2v-6.2c0-3.5 0.3-7.3 0.6-8.5l0.6-2.3H39.3h30.9V33v-4H36.7 2.2v-8-8h42.5 42.5v35.5 35.5h3.4c1.8 0 5.4-0.3 8-0.6l4.6-0.7V47.3v-35.4l8.8 0.3 8.7 0.3 0.3 35.1 0.2 35.1 4.7 0.7c2.5 0.3 5.9 0.6 7.4 0.6h2.9V48.5 13.1h42.5 42.5v8 8H190.8h-32.9l-0.6 2.3c-1.6 6.1-3.7 5.7 30.9 5.7h31.5v5.4c0 2.9 0.3 6.8 0.6 8.5l0.6 3.1H188.8 157.2V67v12.5h33 33v47 47h-33-33v6 6h31.3 31.2l2.8 7.8c1.5 4.3 2.7 8.1 2.7 8.5 0 0.4-15.3 0.7-34 0.7H157.2v6 6h34.9 34.8l0.7 4.6c0.3 2.6 0.6 6.6 0.6 9v4.4h-44.2l-44.3-0.3-0.3-30.7-0.2-30.8h-8-8l-0.2 30.8-0.3 30.7-8.7 0.3-8.8 0.3v-31.1-31h-8.5-8.5v31 31H44.3c-24.2 0-44.2-0.3-44.4-0.7zm33.3-104.8v-29.5h-8-8v28.9 29l4.3 0.4c2.3 0.2 5.9 0.4 8 0.5l3.7 0.2v-29.5zm171.8 28.9l5.2-0.7v-28.8-28.9h-7.5-7.5v29.5 29.5h2.3c1.2 0 4.6-0.3 7.5-0.6zM72.2 117.5v-28.5H60 48v28.5 28.5h12 12v-28.5zm109 0V89H170 158.5v28.5 28.5h11.5 11.5V117.5zM168.9 134.8l2-7.3-29.5-0.3c-16.2-0.1-29.7 0-29.9 0.2-0.4 0.4 2.5 12.5 3.3 13.8 0.3 0.5 12.1 0.8 26.4 0.8h25.8l1.9-7.2zm-3.1-31.4c-0.3-2.6-0.6-6-0.6-7.5v-2.9H140.7h-24.5v7.5 7.5h25.1 25.2l-0.7-4.6z" />
+        </svg>
+        <a
+          href="https://www.menteeglobal.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-base font-medium text-theme-teal transition-colors hover:text-theme-teal-hover"
+        >
+          www.menteeglobal.org
+        </a>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="mt-8 flex flex-wrap gap-3" data-animate>
+      {
+        badges.map((badge) => (
+          <span class="rounded-full border border-theme px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-theme-secondary transition-colors hover:border-[var(--teal)]/40 hover:text-theme-teal">
+            {badge}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</footer>

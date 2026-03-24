@@ -1,0 +1,30 @@
+---
+import Icon from "./Icon.astro";
+
+const idgs = [
+  { name: "Being", icon: "Sprout" as const },
+  { name: "Thinking", icon: "Lightbulb" as const },
+  { name: "Relating", icon: "Heart" as const },
+  { name: "Collaborating", icon: "Globe" as const },
+  { name: "Acting", icon: "Zap" as const },
+];
+---
+
+<div id="idgs" class="mt-6">
+  <p class="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-theme-gold">
+    Advances Inner Development Goals
+  </p>
+  <div class="flex flex-wrap gap-2" data-animate-stagger>
+    {
+      idgs.map((idg) => (
+        <div
+          class="flex items-center gap-1.5 rounded-full border border-theme bg-theme-surface px-4 py-1.5 transition-colors hover:border-[var(--gold)]/40"
+          data-animate="scale"
+        >
+          <Icon name={idg.icon} size={14} class="text-theme-gold" />
+          <span class="text-xs font-medium uppercase tracking-wider text-theme-secondary">{idg.name}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>

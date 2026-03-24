@@ -1,0 +1,30 @@
+---
+const sdgs = [
+  { number: 3, name: "Good Health" },
+  { number: 4, name: "Quality Education" },
+  { number: 5, name: "Gender Equality" },
+  { number: 8, name: "Decent Work" },
+  { number: 10, name: "Reduced Inequalities" },
+  { number: 16, name: "Peace & Justice" },
+  { number: 17, name: "Partnerships" },
+];
+---
+
+<div id="sdgs">
+  <p class="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-theme-teal">
+    Advances UN Sustainable Development Goals
+  </p>
+  <div class="flex flex-wrap gap-2" data-animate-stagger>
+    {
+      sdgs.map((sdg) => (
+        <div
+          class="flex items-center gap-1.5 rounded-md border border-theme bg-theme-surface px-3 py-1.5 transition-colors hover:border-[var(--teal)]/40"
+          data-animate="scale"
+        >
+          <span class="text-sm font-bold text-theme-teal">{sdg.number}</span>
+          <span class="text-xs text-theme-secondary">{sdg.name}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>

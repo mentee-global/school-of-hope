@@ -1,0 +1,55 @@
+---
+const menteeUrl = "https://www.menteeglobal.org";
+const linkClass = "font-medium text-theme-teal transition-colors hover:text-theme-teal-hover";
+
+const differentiators = [
+  {
+    title: "U.S.-Accredited Diploma",
+    description: "Globally portable credential. University-eligible worldwide — not a local certificate.",
+    color: "bg-theme-teal",
+  },
+  {
+    title: "Trauma-Informed by Design",
+    description:
+      "Psychoeducational models + group resilience sessions embedded into daily operations.",
+    color: "bg-theme-teal",
+  },
+  {
+    title: "Post-Program Pathway",
+    description: null,
+    color: "bg-theme-gold",
+  },
+  {
+    title: "Reciprocal Global Teaching",
+    description:
+      "Non-crisis zone student teachers create engaging lessons and connect with crisis-affected peers — building firsthand awareness of global crises and forming real human bonds across divides.",
+    color: "bg-theme-gold",
+  },
+];
+---
+
+<section id="why-different">
+  <p class="mb-1 text-xs font-semibold uppercase tracking-[0.3em] text-theme-teal">Our Approach</p>
+  <h3 class="mb-6 text-xl font-semibold text-theme-primary md:text-2xl">Why School of Hope Is Different</h3>
+  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2" data-animate-stagger>
+    {
+      differentiators.map((item) => (
+        <div class="flex items-start gap-3" data-animate>
+          <span class={`mt-2 h-2.5 w-2.5 flex-shrink-0 rounded-full ${item.color}`} />
+          <div>
+            <h4 class="text-base font-bold text-theme-primary md:text-lg">{item.title}</h4>
+            {item.description ? (
+              <p class="mt-1 text-base leading-relaxed text-theme-secondary">{item.description}</p>
+            ) : (
+              <p class="mt-1 text-base leading-relaxed text-theme-secondary">
+                <a href={menteeUrl} target="_blank" rel="noopener noreferrer" class={linkClass}>MENTEE</a> offers
+                the next step post-graduation: global mentorship, fellowships, mental health sessions, remote
+                internships, and a pathway to economic independence.
+              </p>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

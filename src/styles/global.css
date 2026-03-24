@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+
+  /* Static accent colors (available as Tailwind utilities) */
+  --color-accent-teal: #00c9b7;
+  --color-accent-teal-dark: #0d9488;
+  --color-accent-gold: #e4bb4f;
+  --color-accent-gold-dark: #a58123;
+  --color-accent-burgundy: #800020;
+}
+
+/* ─── Light mode (default) ─── */
+:root {
+  --bg-primary: #fffdf5;
+  --bg-card: #ffffff;
+  --bg-surface: #fcf6e8;
+  --bg-header: rgba(255, 253, 245, 0.95);
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --border-color: rgba(228, 187, 79, 0.2);
+  --teal: #0d9488;
+  --teal-hover: #14b8a6;
+  --gold: #a58123;
+  --gold-hover: #e4bb4f;
+  --burgundy: #800020;
+  --selection-bg: #e4bb4f;
+  --selection-text: #1a1a2e;
+}
+
+/* ─── Dark mode ─── */
+.dark {
+  --bg-primary: #0b0f1a;
+  --bg-card: #111827;
+  --bg-surface: #151c2c;
+  --bg-header: rgba(11, 15, 26, 0.95);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: #1e293b;
+  --teal: #00c9b7;
+  --teal-hover: #2dd4bf;
+  --gold: #e4bb4f;
+  --gold-hover: #f0d78c;
+  --burgundy: #800020;
+  --selection-bg: #00c9b7;
+  --selection-text: #0b0f1a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
+  }
+
+  /* Scroll offset for sticky header */
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer utilities {
+  /* Theme-aware backgrounds */
+  .bg-theme-primary { background-color: var(--bg-primary); }
+  .bg-theme-card { background-color: var(--bg-card); }
+  .bg-theme-surface { background-color: var(--bg-surface); }
+  .bg-theme-header { background-color: var(--bg-header); }
+
+  /* Theme-aware text */
+  .text-theme-primary { color: var(--text-primary); }
+  .text-theme-secondary { color: var(--text-secondary); }
+  .text-theme-muted { color: var(--text-muted); }
+  .text-theme-teal { color: var(--teal); }
+  .text-theme-teal-hover { color: var(--teal-hover); }
+  .text-theme-gold { color: var(--gold); }
+  .text-theme-gold-hover { color: var(--gold-hover); }
+
+  /* Theme-aware borders */
+  .border-theme { border-color: var(--border-color); }
+
+  /* Theme-aware accents for backgrounds */
+  .bg-theme-teal { background-color: var(--teal); }
+  .bg-theme-gold { background-color: var(--gold); }
+  .bg-theme-muted { background-color: var(--text-muted); }
+
+  /* ─── Scroll animations ─── */
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  [data-animate="fade-left"] {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  [data-animate="fade-right"] {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  [data-animate="scale"] {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-in {
+    opacity: 1 !important;
+    transform: translate(0) scale(1) !important;
+  }
+
+  /* Stagger children */
+  [data-animate-stagger] > [data-animate]:nth-child(1) { transition-delay: 0ms; }
+  [data-animate-stagger] > [data-animate]:nth-child(2) { transition-delay: 100ms; }
+  [data-animate-stagger] > [data-animate]:nth-child(3) { transition-delay: 200ms; }
+  [data-animate-stagger] > [data-animate]:nth-child(4) { transition-delay: 300ms; }
+  [data-animate-stagger] > [data-animate]:nth-child(5) { transition-delay: 400ms; }
+  [data-animate-stagger] > [data-animate]:nth-child(6) { transition-delay: 500ms; }
+  [data-animate-stagger] > [data-animate]:nth-child(7) { transition-delay: 600ms; }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}

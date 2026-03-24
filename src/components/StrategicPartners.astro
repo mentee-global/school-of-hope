@@ -1,0 +1,32 @@
+---
+const partners = [
+  { name: "Next Lab at ASU", desc: "Future-Ready Learning" },
+  { name: "Unconnected", desc: "Crisis-Zone Connectivity" },
+  { name: "Complexly", desc: "Free Educational Media" },
+  { name: "AEWA", desc: "Afghan Women's Alliance" },
+  { name: "beingAI", desc: "AI Companionship & Wellbeing" },
+  { name: "Key of Life", desc: "Mental Health Support" },
+  { name: "Salem Group", desc: "Tech · Business · Growth Solutions" },
+];
+---
+
+<section id="partners" data-animate>
+  <p class="mb-1 text-xs font-semibold uppercase tracking-[0.3em] text-theme-teal">
+    Strategic Partners
+  </p>
+  <h3 class="mb-6 text-xl font-semibold text-theme-primary md:text-2xl">Our Network</h3>
+
+  <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" data-animate-stagger>
+    {
+      partners.map((partner) => (
+        <div class="rounded-lg border border-theme bg-theme-surface px-4 py-3" data-animate>
+          <p class="text-sm font-semibold text-theme-primary">{partner.name}</p>
+          <p class="text-xs text-theme-muted">{partner.desc}</p>
+        </div>
+      ))
+    }
+    <div class="flex items-center rounded-lg border border-dashed border-theme px-4 py-3" data-animate>
+      <p class="text-sm italic text-theme-muted">+ 52 additional global partners</p>
+    </div>
+  </div>
+</section>

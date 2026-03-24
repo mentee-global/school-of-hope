@@ -1,0 +1,45 @@
+---
+const costs = [
+  { label: "SOH", value: "$1,171", pct: 7, color: "bg-theme-teal", textColor: "text-theme-teal" },
+  { label: "Mexico", value: "$3,000", pct: 19, color: "bg-theme-muted", textColor: "text-theme-secondary" },
+  { label: "OECD Avg", value: "$12,500", pct: 78, color: "bg-theme-gold", textColor: "text-theme-gold" },
+  { label: "U.S. Avg", value: "$16,000", pct: 100, color: "bg-theme-muted", textColor: "text-theme-secondary" },
+];
+---
+
+<section id="investment" data-animate>
+  <p class="mb-1 text-xs font-semibold uppercase tracking-[0.3em] text-theme-teal">
+    Investment Efficiency
+  </p>
+  <h3 class="mb-6 text-xl font-semibold text-theme-primary md:text-2xl">Cost Per Student / Year</h3>
+
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-[1fr_1fr]">
+    <!-- Bar chart -->
+    <div class="space-y-4">
+      {
+        costs.map((item) => (
+          <div class="flex items-center gap-4">
+            <span class="w-16 flex-shrink-0 sm:w-20 text-base font-medium text-theme-secondary">{item.label}</span>
+            <div class="flex-1">
+              <div class={`h-3 rounded-full ${item.color}`} style={`width: ${item.pct}%`} />
+            </div>
+            <span class={`w-16 flex-shrink-0 sm:w-20 text-right text-base font-bold ${item.textColor}`}>
+              {item.value}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Callout -->
+    <div class="flex items-center">
+      <div class="rounded-xl border border-theme bg-theme-surface p-6">
+        <p class="text-4xl font-bold text-theme-teal md:text-5xl">9%</p>
+        <p class="mt-2 text-base leading-relaxed text-theme-secondary">
+          At scale (1,560 students), SOH delivers a U.S.-accredited diploma pathway at
+          <strong class="text-theme-teal">9% of the average OECD education spend</strong> per student.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

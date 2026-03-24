@@ -1,0 +1,39 @@
+---
+import Icon from "./Icon.astro";
+const menteeUrl = "https://www.menteeglobal.org";
+---
+
+<section id="contact" class="relative overflow-hidden rounded-xl border border-theme p-6 md:p-8" data-animate>
+  <!-- Gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-r from-[var(--teal)]/5 via-theme-surface to-[var(--gold)]/5"></div>
+
+  <div class="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+    <div>
+      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-theme-teal">
+        Get in Touch
+      </p>
+      <p class="text-xl font-bold text-theme-primary md:text-2xl">Letitia Zwickert</p>
+      <p class="mt-1 text-base text-theme-secondary">
+        Founder & CEO, <a href={menteeUrl} target="_blank" rel="noopener noreferrer" class="font-medium text-theme-teal transition-colors hover:text-theme-teal-hover">MENTEE</a>
+      </p>
+    </div>
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <a
+        href="mailto:letitia@menteeglobal.org"
+        class="inline-flex items-center gap-2 rounded-lg bg-[var(--teal)] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[var(--teal)]/20 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[var(--teal)]/30"
+      >
+        <Icon name="Mail" size={18} />
+        letitia@menteeglobal.org
+      </a>
+      <a
+        href={menteeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg border border-theme px-5 py-2.5 text-sm font-semibold text-theme-primary transition-all hover:-translate-y-0.5 hover:bg-theme-surface hover:shadow-md"
+      >
+        <Icon name="ExternalLink" size={18} />
+        menteeglobal.org
+      </a>
+    </div>
+  </div>
+</section>

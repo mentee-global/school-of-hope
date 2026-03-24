@@ -1,0 +1,68 @@
+---
+import Icon from "./Icon.astro";
+
+const tiers = [
+  {
+    label: "Pilot",
+    students: "30 Senior Students",
+    icon: "Rocket" as const,
+    amount: "$361K",
+    description: "Platform build + full program launch. Proof of concept with measurable outcomes.",
+    highlight: false,
+  },
+  {
+    label: "Level 1",
+    students: "260 Students",
+    icon: "Star" as const,
+    amount: "$667K",
+    description: "Full operating school, all grade levels, complete wraparound ecosystem.",
+    highlight: true,
+  },
+  {
+    label: "Level 2",
+    students: "520 Students",
+    icon: "TrendingUp" as const,
+    amount: "$899K",
+    description: "Double reach. Cost per student drops to $1,729/yr.",
+    highlight: false,
+  },
+  {
+    label: "Level 3",
+    students: "1,560 Students",
+    icon: "Globe" as const,
+    amount: "$1.83M",
+    description: "Full scale. $1,171/student/year. Maximum global impact.",
+    highlight: false,
+  },
+];
+---
+
+<section id="funding" data-animate>
+  <p class="mb-1 text-xs font-semibold uppercase tracking-[0.3em] text-theme-teal">
+    Funding Entry Points
+  </p>
+  <h3 class="mb-6 text-xl font-semibold text-theme-primary md:text-2xl">Investment Tiers</h3>
+
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" data-animate-stagger>
+    {
+      tiers.map((tier) => (
+        <div
+          class={`rounded-xl border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5 ${
+            tier.highlight
+              ? "border-[var(--teal)]/50 bg-[var(--teal)]/5 ring-1 ring-[var(--teal)]/20"
+              : "border-theme bg-theme-surface"
+          }`}
+          data-animate
+        >
+          <div class="mb-3 flex items-center gap-2">
+            <Icon name={tier.icon} size={20} class="text-theme-teal" />
+            <span class="text-sm font-bold uppercase tracking-wide text-theme-secondary">{tier.label}</span>
+          </div>
+          <p class="text-2xl font-bold text-theme-teal">{tier.amount}</p>
+          <p class="mt-1 text-sm font-semibold text-theme-primary">{tier.students}</p>
+          <p class="mt-2 text-sm leading-relaxed text-theme-secondary">{tier.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

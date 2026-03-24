@@ -1,0 +1,53 @@
+---
+const menteeUrl = "https://www.menteeglobal.org";
+---
+
+<section id="how-it-works">
+  <p class="mb-1 text-xs font-semibold uppercase tracking-[0.3em] text-theme-teal">The Process</p>
+  <h3 class="mb-6 text-xl font-semibold text-theme-primary md:text-2xl">How It Works</h3>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-3" data-animate-stagger>
+    <!-- Step 01 -->
+    <div
+      class="group relative overflow-hidden rounded-xl border border-theme bg-theme-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5"
+      data-animate
+    >
+      <div class="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[var(--teal)] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+      <h4 class="mb-2 text-base font-bold text-theme-primary md:text-lg">Student Teachers Deliver</h4>
+      <p class="text-base leading-relaxed text-theme-secondary">
+        Non-crisis youth from partner schools record video lessons. AI translates into any language. Downloadable for offline use.
+      </p>
+      <span class="absolute bottom-3 right-4 text-4xl font-bold text-[var(--teal)]/10 transition-colors duration-300 group-hover:text-[var(--teal)]/20">01</span>
+    </div>
+
+    <!-- Step 02 -->
+    <div
+      class="group relative overflow-hidden rounded-xl border border-theme bg-theme-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5"
+      data-animate
+    >
+      <div class="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[var(--teal)] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+      <h4 class="mb-2 text-base font-bold text-theme-primary md:text-lg">Crisis Students Achieve</h4>
+      <p class="text-base leading-relaxed text-theme-secondary">
+        Low-bandwidth access, peer videos,{" "}
+        <span class="font-medium text-theme-teal">trauma-informed support</span>,{" "}
+        <span class="font-medium text-theme-teal">mental health services</span>, and
+        project-based learning.
+      </p>
+      <span class="absolute bottom-3 right-4 text-4xl font-bold text-[var(--teal)]/10 transition-colors duration-300 group-hover:text-[var(--teal)]/20">02</span>
+    </div>
+
+    <!-- Step 03 -->
+    <div
+      class="group relative overflow-hidden rounded-xl border border-theme bg-theme-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5"
+      data-animate
+    >
+      <div class="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[var(--teal)] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+      <h4 class="mb-2 text-base font-bold text-theme-primary md:text-lg">Graduates Advance</h4>
+      <p class="text-base leading-relaxed text-theme-secondary">
+        U.S. high school diploma earned. Provisional university admission.
+        <a href={menteeUrl} target="_blank" rel="noopener noreferrer" class="font-medium text-theme-teal transition-colors hover:text-theme-teal-hover">MENTEE</a>
+        pathway to remote work, mentorship, and income.
+      </p>
+      <span class="absolute bottom-3 right-4 text-4xl font-bold text-[var(--teal)]/10 transition-colors duration-300 group-hover:text-[var(--teal)]/20">03</span>
+    </div>
+  </div>
+</section>

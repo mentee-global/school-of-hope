@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon.astro";
+
+const menteeUrl = "https://www.menteeglobal.org";
+const linkClass = "font-medium text-theme-teal transition-colors hover:text-theme-teal-hover";
+
+const stats = [
+  { value: "260–1,560", icon: "Users" as const, label: "students annually empowered", detail: "Accredited diploma, mental health support, and pathways to sustainable futures" },
+  { value: "24", icon: "Award" as const, label: "accredited credits per student", detail: "Toward a U.S. high school diploma" },
+  { value: "59+", icon: "Handshake" as const, label: "global partner organizations", detail: "Already active in the MENTEE network" },
+  { value: "6", icon: "GraduationCap" as const, label: "university partners", detail: "Offering provisional admission to graduates" },
+];
+---
+
+<section id="impact">
+  <p class="mb-1 text-xs font-semibold uppercase tracking-[0.3em] text-theme-teal">Impact at Scale</p>
+  <h3 class="mb-6 text-xl font-semibold text-theme-primary md:text-2xl">Projected Impact Per Investment Cycle</h3>
+
+  <div class="grid grid-cols-2 gap-3 sm:grid-cols-4" data-animate-stagger>
+    {
+      stats.map((stat) => (
+        <div class="rounded-xl border border-theme bg-theme-surface p-4 text-center" data-animate>
+          <Icon name={stat.icon} size={24} class="mx-auto mb-2 text-theme-teal" />
+          <p class="text-xl font-bold text-theme-teal sm:text-2xl md:text-3xl">{stat.value}</p>
+          <p class="mt-1 text-sm font-semibold text-theme-primary">{stat.label}</p>
+          <p class="mt-1 text-xs leading-snug text-theme-muted">{stat.detail}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
